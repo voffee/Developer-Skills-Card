@@ -1,0 +1,93 @@
+/* Root Variables */
+:root {
+    /* Primary */
+
+    /* Neutral */
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-face {
+    background-color: red;
+    height: 500px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.card-face-reverse {
+    height: 500px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #DCD6D0;
+    border-radius: 20px;
+    /* display: none; */
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    height: 225px;
+    width: 300px;
+    /* top-left | top-right | bottom-right | bottom-left  */
+    border-radius: 20px 20px 150px 0px;
+}
+
+.header p {
+    font-size: 24px;
+    color: white;
+}
+
+.value-portion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+}
+
+.value-portion p:nth-child(1) {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.value-portion p:nth-child(2) {
+    /* text-align: center; */
+}
+
+.profile-photo {
+    height: 45%;
+    width: auto;
+    border: 5px solid white;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
