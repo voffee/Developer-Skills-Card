@@ -1,8 +1,10 @@
 /* Root Variables */
 :root {
-    /* Primary */
-
-    /* Neutral */
+    /* Color Variables */
+    --primary: #48FEC6;
+    --secondary: #FE4880;
+    --dark: #212121;
+    --light: #F3F3F3;
 }
 
 /* Global Reset */
@@ -26,10 +28,22 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    perspective: 800px;
+}
+
+.card-container {
+    cursor: pointer;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card-container.is-flipped {
+    transform: rotateY(180deg);
 }
 
 .card-face {
-    background: linear-gradient(45deg, wheat, red);
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
     height: 450px;
     width: 300px;
     display: flex;
@@ -37,7 +51,15 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    /* display: none; */
+    backface-visibility: hidden;
+    overflow: hidden;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+}
+
+.card-face p {
+    color: var(--light);
+    font-size: 30px;
 }
 
 .card-face-reverse {
@@ -46,9 +68,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #e5e5e5;
+    background-color: var(--light);
     border-radius: 20px;
-    /* display: none; */
+    backface-visibility: hidden;
+    overflow: hidden;
+    transform: rotateY(180deg);
+    /* position: absolute; */
 }
 
 .header {
@@ -56,7 +81,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(45deg, wheat, red);
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
     height: 205px;
     width: 300px;
     /* top-left | top-right | bottom-right | bottom-left  */
@@ -65,7 +90,7 @@ body {
 
 .header p {
     font-size: 24px;
-    color: white;
+    color: var(--light);
 }
 
 .value-portion {
@@ -80,6 +105,7 @@ body {
 .value-portion p:nth-child(1) {
     margin-bottom: 10px;
     font-size: 20px;
+    font-weight: 700;
 }
 .value-portion p:nth-child(2) {
     text-align: center;
@@ -88,7 +114,7 @@ body {
 .profile-photo {
     height: 45%;
     width: auto;
-    border: 5px solid white;
+    border: 5px solid var(--light);
     border-radius: 100px;
     margin-bottom: 10px;
 }
